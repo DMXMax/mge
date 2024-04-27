@@ -1,11 +1,9 @@
 package main
 
 import (
-	"example/mge/util"
 	"fmt"
 
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
+	"github.com/DMXMax/mge/chart"
 )
 
 //create a function called main that generates a random result from the Actions map and a random result from the subject map and prints them out
@@ -19,9 +17,9 @@ import (
 func main() {
 	//get a random Action
 
-	event := util.GetEvent(10)
-	fmt.Println(cases.Title(language.AmericanEnglish).String(event.String()))
-
+	result := chart.FateChart.RollOdds(chart.FiftyFifty, 6)
+	//fmt.Println(cases.Title(language.AmericanEnglish).String(event.Event.String()))
+	fmt.Printf("%s\n", result)
 	//get a random Subject
 	//print out the results
 

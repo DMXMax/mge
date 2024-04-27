@@ -100,8 +100,8 @@ func (e Event) String() string {
 	return EventText[e.Focus] + ": " + e.Action + " " + e.Subject
 }
 
-func GetEvent(int) Event {
+func GetEvent() *Event {
 	focus := GetEventFocus()
 	action, subject := GetEventAction()
-	return Event{focus, action, subject}
+	return &Event{focus, action, subject}
 }

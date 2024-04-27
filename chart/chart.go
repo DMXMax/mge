@@ -1,9 +1,11 @@
 package chart
 
 import (
-	"example/mge/util"
-	"log"
+	"fmt"
 	"math/rand"
+	"strings"
+
+	"github.com/DMXMax/mge/util"
 )
 
 const MAX_CHAOS = 9
@@ -46,7 +48,18 @@ type Result struct {
 	Odds     int
 	Roll     int
 	Text     string
-	Event    util.Event
+	Event    *util.Event
+}
+
+func (r *Result) String() string {
+	sb := strings.Builder{}
+	sb.WriteString(fmt.Sprintf("%d: %s ", r.Roll, r.Text))
+
+	if r.Event != nil {
+		sb.WriteString(fmt.Sprintf("Event: %s", r.Event))
+	}
+
+	return sb.String()
 }
 
 func (f *tFateChart) RollOdds(o Odds, chaos int) *Result {
@@ -62,8 +75,7 @@ func (f *tFateChart) RollOdds(o Odds, chaos int) *Result {
 	r.Roll = roll
 
 	if roll%11 == 0 && roll/11 <= chaos {
-		r.Event.Focus = util.GetEventFocus()
-		r.Event.Action, r.Event.Subject = util.GetEventAction()
+		r.Event = util.GetEvent()
 	}
 	return r
 }
@@ -73,8 +85,6 @@ func evaluate(odds, roll int) *Result {
 
 	exy := odds / 5
 	exn := ((100 - odds) / 5 * 4) + (odds + 1)
-
-	log.Printf("exy %d, exn %d\n", exy, exn)
 
 	switch {
 	//top 20% is exceptional yes
