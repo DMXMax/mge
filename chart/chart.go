@@ -27,6 +27,30 @@ const (
 	Certain
 )
 
+func (o Odds) String() string {
+	switch o {
+	case Impossible:
+		return "Impossible"
+	case NearlyImpossible:
+		return "Nearly Impossible"
+	case VeryUnlikely:
+		return "Very Unlikely"
+	case Unlikely:
+		return "Unlikely"
+	case FiftyFifty:
+		return "Fifty Fifty"
+	case Likely:
+		return "Likely"
+	case VeryLikely:
+		return "Very Likely"
+	case NearlyCertain:
+		return "Nearly Certain"
+	case Certain:
+		return "Certain"
+	}
+	return "Unknown"
+}
+
 type tFateChart map[Odds][9]int
 
 // map of Odds to array of nine probabilities
@@ -40,6 +64,27 @@ var FateChart = tFateChart{
 	VeryLikely:       {105, 95, 95, 90, 85, 75, 65, 50, 45},
 	NearlyCertain:    {115, 100, 95, 95, 90, 80, 75, 55, 50},
 	Certain:          {125, 110, 95, 95, 90, 85, 80, 65, 55},
+}
+
+var FateChartNames = map[string]Odds{
+	"impossible":       Impossible,
+	"nearlyimpossible": NearlyImpossible,
+	"veryunlikely":     VeryUnlikely,
+	"unlikely":         Unlikely,
+	"fiftyfifty":       FiftyFifty,
+	"likely":           Likely,
+	"verylikely":       VeryLikely,
+	"nearlycertain":    NearlyCertain,
+	"certain":          Certain,
+	"cert":             Certain,
+	"imp":              Impossible,
+	"ncert":            NearlyCertain,
+	"vunl":             VeryUnlikely,
+	"unl":              Unlikely,
+	"probably":         Likely,
+	"vl":               VeryLikely,
+	"nimp":             NearlyImpossible,
+	"50/50":            FiftyFifty,
 }
 
 type Result struct {
