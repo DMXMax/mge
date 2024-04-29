@@ -12,7 +12,7 @@ const MAX_CHAOS = 9
 const MIN_CHAOS = 0
 
 // enum
-type Odds int
+type Odds int8
 
 // enum of Odds
 const (
@@ -27,28 +27,58 @@ const (
 	Certain
 )
 
+type StringList []string
+
+var (
+	OddsStrList = StringList{
+		"impossible",
+		"nearly impossible",
+		"very unlikely",
+		"unlikely",
+		"fifty fifty",
+		"likely",
+		"very likely",
+		"nearly certain",
+		"certain",
+	}
+)
+
+// This returns an array of strings that match the prefix
+// if the prefix is '?' it returns all strings
+func MatchOddNametoOdds(str string) []int8 {
+	var idx []int8
+	if str == "?" {
+		return []int8{0, 1, 2, 3, 4, 5, 6, 7, 8}
+	}
+	for i, v := range OddsStrList {
+		if strings.HasPrefix(v, str) {
+			idx = append(idx, int8(i))
+		}
+	}
+	return idx
+}
 func (o Odds) String() string {
 	switch o {
 	case Impossible:
-		return "Impossible"
+		return OddsStrList[0]
 	case NearlyImpossible:
-		return "Nearly Impossible"
+		return OddsStrList[1]
 	case VeryUnlikely:
-		return "Very Unlikely"
+		return OddsStrList[2]
 	case Unlikely:
-		return "Unlikely"
+		return OddsStrList[3]
 	case FiftyFifty:
-		return "Fifty Fifty"
+		return OddsStrList[4]
 	case Likely:
-		return "Likely"
+		return OddsStrList[5]
 	case VeryLikely:
-		return "Very Likely"
+		return OddsStrList[6]
 	case NearlyCertain:
-		return "Nearly Certain"
+		return OddsStrList[7]
 	case Certain:
-		return "Certain"
+		return OddsStrList[8]
 	}
-	return "Unknown"
+	return "unknown"
 }
 
 type tFateChart map[Odds][9]int
