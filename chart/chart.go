@@ -43,13 +43,31 @@ var (
 	}
 )
 
+type tFateChart map[Odds][9]int
+
+// map of Odds to array of nine probabilities
+var FateChart = tFateChart{
+	Impossible:       {50, 25, 15, 10, 5, 5, 0, 0, -20},
+	NearlyImpossible: {75, 50, 35, 25, 15, 10, 5, 5, 0},
+	VeryUnlikely:     {85, 65, 50, 45, 25, 15, 10, 5, 5},
+	Unlikely:         {90, 75, 55, 50, 35, 20, 15, 10, 5},
+	FiftyFifty:       {95, 85, 75, 65, 50, 35, 25, 15, 10},
+	Likely:           {100, 95, 90, 85, 75, 55, 50, 35, 25},
+	VeryLikely:       {105, 95, 95, 90, 85, 75, 65, 50, 45},
+	NearlyCertain:    {115, 100, 95, 95, 90, 80, 75, 55, 50},
+	Certain:          {125, 110, 95, 95, 90, 85, 80, 65, 55},
+}
+
 // This returns an array of strings that match the prefix
 // if the prefix is '?' it returns all strings
 func MatchOddNametoOdds(str string) []int8 {
-	var idx []int8
+
 	if str == "?" {
 		return []int8{0, 1, 2, 3, 4, 5, 6, 7, 8}
 	}
+
+	var idx = make([]int8, 0, len(OddsStrList))
+
 	for i, v := range OddsStrList {
 		if strings.HasPrefix(v, str) {
 			idx = append(idx, int8(i))
@@ -79,42 +97,6 @@ func (o Odds) String() string {
 		return OddsStrList[8]
 	}
 	return "unknown"
-}
-
-type tFateChart map[Odds][9]int
-
-// map of Odds to array of nine probabilities
-var FateChart = tFateChart{
-	Impossible:       {50, 25, 15, 10, 5, 5, 0, 0, -20},
-	NearlyImpossible: {75, 50, 35, 25, 15, 10, 5, 5, 0},
-	VeryUnlikely:     {85, 65, 50, 45, 25, 15, 10, 5, 5},
-	Unlikely:         {90, 75, 55, 50, 35, 20, 15, 10, 5},
-	FiftyFifty:       {95, 85, 75, 65, 50, 35, 25, 15, 10},
-	Likely:           {100, 95, 90, 85, 75, 55, 50, 35, 25},
-	VeryLikely:       {105, 95, 95, 90, 85, 75, 65, 50, 45},
-	NearlyCertain:    {115, 100, 95, 95, 90, 80, 75, 55, 50},
-	Certain:          {125, 110, 95, 95, 90, 85, 80, 65, 55},
-}
-
-var FateChartNames = map[string]Odds{
-	"impossible":       Impossible,
-	"nearlyimpossible": NearlyImpossible,
-	"veryunlikely":     VeryUnlikely,
-	"unlikely":         Unlikely,
-	"fiftyfifty":       FiftyFifty,
-	"likely":           Likely,
-	"verylikely":       VeryLikely,
-	"nearlycertain":    NearlyCertain,
-	"certain":          Certain,
-	"cert":             Certain,
-	"imp":              Impossible,
-	"ncert":            NearlyCertain,
-	"vunl":             VeryUnlikely,
-	"unl":              Unlikely,
-	"probably":         Likely,
-	"vl":               VeryLikely,
-	"nimp":             NearlyImpossible,
-	"50/50":            FiftyFifty,
 }
 
 type Result struct {
