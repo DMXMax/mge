@@ -46,6 +46,8 @@ var (
 type tFateChart map[Odds][9]int
 
 // map of Odds to array of nine probabilities
+// verticals are the chaos factor
+// horizontals are the odds
 var FateChart = tFateChart{
 	Impossible:       {50, 25, 15, 10, 5, 5, 0, 0, -20},
 	NearlyImpossible: {75, 50, 35, 25, 15, 10, 5, 5, 0},
@@ -110,7 +112,7 @@ type Result struct {
 
 func (r *Result) String() string {
 	sb := strings.Builder{}
-	sb.WriteString(fmt.Sprintf("%d: %s ", r.Roll, r.Text))
+	sb.WriteString(fmt.Sprintf("%s - %d: %s ", r.RollOdds, r.Roll, r.Text))
 
 	if r.Event != nil {
 		sb.WriteString(fmt.Sprintf("Event: %s", r.Event))
