@@ -8,7 +8,7 @@ import (
 	"github.com/DMXMax/mge/util"
 )
 
-const MAX_CHAOS = 9
+const MAX_CHAOS = 8
 const MIN_CHAOS = 0
 
 // enum
