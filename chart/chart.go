@@ -9,7 +9,7 @@ import (
 )
 
 const maxChaos = 8
-const minChaos = 0
+const MinChaos = 0
 
 // enum
 type Odds int8
@@ -123,7 +123,7 @@ func (r *Result) String() string {
 }
 
 func (f *fateChart) RollOdds(o Odds, chaos int) *Result {
-	chaos = max(min(chaos, maxChaos), minChaos)
+	chaos = max(min(chaos, maxChaos), MinChaos)
 
 	odds := FateChart[o][maxChaos-chaos]
 	roll := rand.Intn(100) + 1
