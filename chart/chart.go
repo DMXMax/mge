@@ -116,7 +116,7 @@ func (r *Result) String() string {
 	sb.WriteString(fmt.Sprintf("%s - %d: %s ", r.RollOdds, r.Roll, r.Text))
 
 	if r.Event != nil {
-		sb.WriteString(fmt.Sprintf("Event: %s", r.Event))
+		sb.WriteString(fmt.Sprintf(": Event: %s", r.Event))
 	}
 
 	return sb.String()
