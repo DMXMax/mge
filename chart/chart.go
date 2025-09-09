@@ -8,7 +8,7 @@ import (
 	"github.com/DMXMax/mge/util"
 )
 
-const maxChaos = 8
+const MaxChaos = 8
 const MinChaos = 0
 
 // enum
@@ -123,9 +123,9 @@ func (r *Result) String() string {
 }
 
 func (f *fateChart) RollOdds(o Odds, chaos int) *Result {
-	chaos = max(min(chaos, maxChaos), MinChaos)
+	chaos = max(min(chaos, MaxChaos), MinChaos)
 
-	odds := FateChart[o][maxChaos-chaos]
+	odds := FateChart[o][MaxChaos-chaos]
 	roll := rand.Intn(100) + 1
 
 	r := evaluate(odds, roll)
