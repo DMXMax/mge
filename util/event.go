@@ -205,11 +205,3 @@ var Subject = []string{
 	"Anger",
 	"Information",
 }
-
-func causesEvent(num, chaos int) bool {
-	num -= 1
-	if num%11 == 0 && num/11 <= chaos {
-		return true
-	}
-	return false
-}

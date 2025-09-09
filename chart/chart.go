@@ -8,8 +8,8 @@ import (
 	"github.com/DMXMax/mge/util"
 )
 
-const MAX_CHAOS = 8
-const MIN_CHAOS = 0
+const maxChaos = 8
+const minChaos = 0
 
 // enum
 type Odds int8
@@ -43,12 +43,12 @@ var (
 	}
 )
 
-type tFateChart map[Odds][9]int
+type fateChart map[Odds][9]int
 
 // map of Odds to array of nine probabilities
 // verticals are the chaos factor
 // horizontals are the odds
-var FateChart = tFateChart{
+var FateChart = fateChart{
 	Impossible:       {50, 25, 15, 10, 5, 5, 0, 0, -20},
 	NearlyImpossible: {75, 50, 35, 25, 15, 10, 5, 5, 0},
 	VeryUnlikely:     {85, 65, 50, 45, 25, 15, 10, 5, 5},
@@ -60,23 +60,21 @@ var FateChart = tFateChart{
 	Certain:          {125, 110, 95, 95, 90, 85, 80, 65, 55},
 }
 
-// This returns an array of strings that match the prefix
-// if the prefix is '?' it returns all strings
-func MatchOddNametoOdds(str string) []int8 {
-
+// MatchOddsPrefix returns the list of Odds whose names start with the prefix.
+// If the prefix is "?" or there are no matches, it returns all Odds values.
+func MatchOddsPrefix(str string) []Odds {
 	if str == "?" {
-		return []int8{0, 1, 2, 3, 4, 5, 6, 7, 8}
+		return []Odds{Impossible, NearlyImpossible, VeryUnlikely, Unlikely, FiftyFifty, Likely, VeryLikely, NearlyCertain, Certain}
 	}
 
-	var idx = make([]int8, 0, len(OddsStrList))
-
+	idx := make([]Odds, 0, len(OddsStrList))
 	for i, v := range OddsStrList {
 		if strings.HasPrefix(v, str) {
-			idx = append(idx, int8(i))
+			idx = append(idx, Odds(i))
 		}
 	}
 	if len(idx) == 0 {
-		idx = []int8{0, 1, 2, 3, 4, 5, 6, 7, 8}
+		return []Odds{Impossible, NearlyImpossible, VeryUnlikely, Unlikely, FiftyFifty, Likely, VeryLikely, NearlyCertain, Certain}
 	}
 	return idx
 }
@@ -124,10 +122,10 @@ func (r *Result) String() string {
 	return sb.String()
 }
 
-func (f *tFateChart) RollOdds(o Odds, chaos int) *Result {
-	chaos = max(min(chaos, MAX_CHAOS), MIN_CHAOS)
+func (f *fateChart) RollOdds(o Odds, chaos int) *Result {
+	chaos = max(min(chaos, maxChaos), minChaos)
 
-	odds := FateChart[o][MAX_CHAOS-chaos]
+	odds := FateChart[o][maxChaos-chaos]
 	roll := rand.Intn(100) + 1
 
 	r := evaluate(odds, roll)
