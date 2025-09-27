@@ -23,7 +23,7 @@
   },
   {
     "index": 3,
-    "text": "INTO THE UNKNOWN: This Turning Point involves Characters entering a situation with unknown factors. To know the unknown, you have to commit to it. For instance, a magic portal where there is no way of knowing what\u2019s on the other side except by walking through it. Or, you discover a machine that is very powerful but you have no idea what it does, except if you turn it on. The only way to discover the unknown is to engage it, when it will be too late if you regret it.",
+    "text": "INTO THE UNKNOWN: This Turning Point involves Characters entering a situation with unknown factors. To know the unknown, you have to commit to it. For instance, a magic portal where there is no way of knowing what's on the other side except by walking through it. Or, you discover a machine that is very powerful but you have no idea what it does, except if you turn it on. The only way to discover the unknown is to engage it, when it will be too late if you regret it.",
     "ranges": {
       "Action": 0,
       "Tension": 26,
@@ -34,8 +34,14 @@
   },
   {
     "index": 4,
-    "text": "A CHARACTER IS ATTACKED IN A NON-LETHAL WAY: A Character is attacked, but the assailant will not attack to kill. 25-26 - - - -",
-    "ranges": {}
+    "text": "A CHARACTER IS ATTACKED IN A NON-LETHAL WAY: A Character is attacked, but the assailant will not attack to kill.",
+    "ranges": {
+      "Action": 26,
+      "Tension": 0,
+      "Mystery": 0,
+      "Social": 0,
+      "Personal": 0
+    }
   },
   {
     "index": 5,
@@ -138,7 +144,7 @@
   },
   {
     "index": 14,
-    "text": "DO IT, OR ELSE: A Character is being given a task, and is being pressured into completing the task with a threat. For instance, a spy is forcing a diplomat to hand over technology secrets or he will expose the diplomat\u2019s illegal activities and send him to jail. Of course, probably the most common form of this Plot Point is \u201cDo this or I will kill you\u201d.",
+    "text": "DO IT, OR ELSE: A Character is being given a task, and is being pressured into completing the task with a threat. For instance, a spy is forcing a diplomat to hand over technology secrets or he will expose the diplomat's illegal activities and send him to jail. Of course, probably the most common form of this Plot Point is \u201cDo this or I will kill you\u201d.",
     "ranges": {
       "Action": 0,
       "Tension": 33,
@@ -248,7 +254,7 @@
   },
   {
     "index": 24,
-    "text": "HUNTED: A Character is being hunted by someone or something that is not strictly legitimate. In other words, as opposed to Wanted By The Law, Hunted may mean a hit man is pursuing a Character to fulfill a mafia contract on them, or a ghost may be after a Character. The hunter doesn\u2019t have to be seeking to kill.",
+    "text": "HUNTED: A Character is being hunted by someone or something that is not strictly legitimate. In other words, as opposed to Wanted By The Law, Hunted may mean a hit man is pursuing a Character to fulfill a mafia contract on them, or a ghost may be after a Character. The hunter doesn't have to be seeking to kill.",
     "ranges": {
       "Action": 36,
       "Tension": 41,
@@ -281,7 +287,7 @@
   },
   {
     "index": 27,
-    "text": "BAD DECISION: A decision a Character made has turned out to be a very bad one. This can be a decision made earlier in the Adventure, or it can be something from before the Adventure. This earlier decision may not have seemed like a bad one at the time, but it has turned out to be bad, either for the Character, for others, or both. For instance, maybe a ship\u2019s captain decided to investigate a distress beacon in deep space, only to find it\u2019s a trap laid by pirates.",
+    "text": "BAD DECISION: A decision a Character made has turned out to be a very bad one. This can be a decision made earlier in the Adventure, or it can be something from before the Adventure. This earlier decision may not have seemed like a bad one at the time, but it has turned out to be bad, either for the Character, for others, or both. For instance, maybe a ship's captain decided to investigate a distress beacon in deep space, only to find it's a trap laid by pirates.",
     "ranges": {
       "Action": 0,
       "Tension": 42,
@@ -302,7 +308,7 @@
   },
   {
     "index": 28,
-    "text": "DISTRACTION: A Character is distracted in this Turning Point in such a way that it impacts events. For instance, before a villain delivers his killing blow he\u2019s distracted by an image of his lost love, giving the hero time to escape.",
+    "text": "DISTRACTION: A Character is distracted in this Turning Point in such a way that it impacts events. For instance, before a villain delivers his killing blow he's distracted by an image of his lost love, giving the hero time to escape.",
     "ranges": {
       "Action": 37,
       "Tension": 0,
@@ -313,7 +319,7 @@
   },
   {
     "index": 29,
-    "text": "ILL WILL: A Character harbors ill will toward another Character for some reason. The animosity should be deep seated and color the Character\u2019s reactions when it comes to the unliked Character. The dislike may be reciprocated or not.",
+    "text": "ILL WILL: A Character harbors ill will toward another Character for some reason. The animosity should be deep seated and color the Character's reactions when it comes to the unliked Character. The dislike may be reciprocated or not.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -335,7 +341,7 @@
   },
   {
     "index": 31,
-    "text": "WANTED BY THE LAW: A Character is wanted for a crime. It doesn\u2019t matter if they actually did the crime, but the law is after them as the main suspect either way.",
+    "text": "WANTED BY THE LAW: A Character is wanted for a crime. It doesn't matter if they actually did the crime, but the law is after them as the main suspect either way.",
     "ranges": {
       "Action": 0,
       "Tension": 43,
@@ -368,7 +374,7 @@
   },
   {
     "index": 34,
-    "text": "FORTUITOUS FIND: A Character runs across something very useful for resolving the Plotline. This may be a piece of information, a useful tool, a resource that is needed, a person who can help, etc. Whatever it is, it\u2019s the right thing at the right time, and it falls into the Character\u2019s lap.",
+    "text": "FORTUITOUS FIND: A Character runs across something very useful for resolving the Plotline. This may be a piece of information, a useful tool, a resource that is needed, a person who can help, etc. Whatever it is, it's the right thing at the right time, and it falls into the Character's lap.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -434,7 +440,7 @@
   },
   {
     "index": 40,
-    "text": "CRYPTIC INFORMATION FROM A KNOWN SOURCE: A Character acquires information that is not immediately useful from a known source. The information is cryptic, the Character doesn\u2019t know what it means. For instance, a crewmember leaves behind a note to be found that simply says, \u201cKraton,\u201d where the Character receiving the note has no idea what \u201cKraton\u201d is.",
+    "text": "CRYPTIC INFORMATION FROM A KNOWN SOURCE: A Character acquires information that is not immediately useful from a known source. The information is cryptic, the Character doesn't know what it means. For instance, a crewmember leaves behind a note to be found that simply says, \u201cKraton,\u201d where the Character receiving the note has no idea what \u201cKraton\u201d is.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -467,7 +473,7 @@
   },
   {
     "index": 43,
-    "text": "SOMETHING EXOTIC: Whatever is happening in this Turning Point it involves an unusual or exotic element. For instance, if the Turning Point is about someone being attacked by an assassin, the assassin may have a very unusual identity or mode of attack (maybe he\u2019s disguised as a clown and attacks with exploding balloons, or he is a martial artist with fantastic moves).",
+    "text": "SOMETHING EXOTIC: Whatever is happening in this Turning Point it involves an unusual or exotic element. For instance, if the Turning Point is about someone being attacked by an assassin, the assassin may have a very unusual identity or mode of attack (maybe he's disguised as a clown and attacks with exploding balloons, or he is a martial artist with fantastic moves).",
     "ranges": {
       "Action": 40,
       "Tension": 44,
@@ -478,7 +484,7 @@
   },
   {
     "index": 44,
-    "text": "IMMEDIATELY: Immediate action is required in this Turning Point, whatever is going on. For instance, if this Turning Point involves engine failure on a starship, the Character doesn\u2019t have days to resolve the issue, he may only have an hour. Whatever is going on, it requires immediate action.",
+    "text": "IMMEDIATELY: Immediate action is required in this Turning Point, whatever is going on. For instance, if this Turning Point involves engine failure on a starship, the Character doesn't have days to resolve the issue, he may only have an hour. Whatever is going on, it requires immediate action.",
     "ranges": {
       "Action": 42,
       "Tension": 45,
@@ -489,7 +495,7 @@
   },
   {
     "index": 45,
-    "text": "FAME: Whatever is happening in this Turning Point involves someone famous to some extent. This doesn\u2019t necessarily mean that a famous Character is Invoked, just that the Turning Point has some connection to fame. For instance, if this Turning Point involves learning a secret about another Character, you may learn that they were once a member of a famous superhero group decades ago.",
+    "text": "FAME: Whatever is happening in this Turning Point involves someone famous to some extent. This doesn't necessarily mean that a famous Character is Invoked, just that the Turning Point has some connection to fame. For instance, if this Turning Point involves learning a secret about another Character, you may learn that they were once a member of a famous superhero group decades ago.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -588,7 +594,13 @@
   {
     "index": 53,
     "text": "AT NIGHT: This Turning Point takes place at night.",
-    "ranges": {}
+    "ranges": {
+      "Action": 0,
+      "Tension": 50,
+      "Mystery": 0,
+      "Social": 0,
+      "Personal": 0
+    }
   },
   {
     "index": 54,
@@ -669,7 +681,7 @@
   },
   {
     "index": 61,
-    "text": "A CHARACTER ACTS OUT OF CHARACTER: A Character does something that runs counter to that Character\u2019s perceived goals or personality. The action may seem at odds to how they\u2019ve been acting (such as a trusted member of a team sabotaging a crucial resource) or the action is vague with no discernible purpose (such as a Character meeting with an unknown person in secret).",
+    "text": "A CHARACTER ACTS OUT OF CHARACTER: A Character does something that runs counter to that Character's perceived goals or personality. The action may seem at odds to how they've been acting (such as a trusted member of a team sabotaging a crucial resource) or the action is vague with no discernible purpose (such as a Character meeting with an unknown person in secret).",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -680,7 +692,7 @@
   },
   {
     "index": 62,
-    "text": "HEADQUARTERS: A setting in this Turning Point is a Character\u2019s main headquarters. For instance, it may be the ritzy bar where the mob boss runs his empire, or the wizard\u2019s wilderness tower.",
+    "text": "HEADQUARTERS: A setting in this Turning Point is a Character's main headquarters. For instance, it may be the ritzy bar where the mob boss runs his empire, or the wizard's wilderness tower.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -713,7 +725,7 @@
   },
   {
     "index": 65,
-    "text": "A COMMON SOCIAL GATHERING: This Turning Point involves a social gathering. This can be any gathering of people, generally for a common purpose, such as gathering for dinner at a home or restaurant, or an afternoon at a mall. The social gathering itself should be considered of a mundane nature, although what else transpires at the gathering doesn\u2019t necessarily have to be.",
+    "text": "A COMMON SOCIAL GATHERING: This Turning Point involves a social gathering. This can be any gathering of people, generally for a common purpose, such as gathering for dinner at a home or restaurant, or an afternoon at a mall. The social gathering itself should be considered of a mundane nature, although what else transpires at the gathering doesn't necessarily have to be.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -768,7 +780,7 @@
   },
   {
     "index": 70,
-    "text": "SECRET INFORMATION LEAKED: Information that should not have gotten into the wrong hands has. For instance, outlaws always seem to know when the stagecoach is coming through Gateway Gulch with the railroad payroll. How are they finding out? Or, an enemy spy has learned of the realm\u2019s secret military plans.",
+    "text": "SECRET INFORMATION LEAKED: Information that should not have gotten into the wrong hands has. For instance, outlaws always seem to know when the stagecoach is coming through Gateway Gulch with the railroad payroll. How are they finding out? Or, an enemy spy has learned of the realm's secret military plans.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -801,7 +813,7 @@
   },
   {
     "index": 73,
-    "text": "A FIGURE FROM THE PAST: A new Character joins the Adventure, someone from a Character\u2019s past. This Plot Point requires a new Character to be added to the Characters List and Invoked.",
+    "text": "A FIGURE FROM THE PAST: A new Character joins the Adventure, someone from a Character's past. This Plot Point requires a new Character to be added to the Characters List and Invoked.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -834,7 +846,7 @@
   },
   {
     "index": 76,
-    "text": "EVIDENCE: A Character finds something that helps settle an existing question. For instance, the gun that killed a victim is found stashed under a suspect\u2019s bed.",
+    "text": "EVIDENCE: A Character finds something that helps settle an existing question. For instance, the gun that killed a victim is found stashed under a suspect's bed.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -922,7 +934,7 @@
   },
   {
     "index": 84,
-    "text": "DOING THE RIGHT THING: A Character who is acting in bad faith in some way has a change of heart and decides to do the right thing. For instance, a con man stealing medicine from a diseased community decides he can\u2019t leave all those people to die.",
+    "text": "DOING THE RIGHT THING: A Character who is acting in bad faith in some way has a change of heart and decides to do the right thing. For instance, a con man stealing medicine from a diseased community decides he can't leave all those people to die.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -933,7 +945,7 @@
   },
   {
     "index": 85,
-    "text": "VICTORY!: A Character achieves a victory over another Character in this Turning Point. For instance, a band of marauders successfully waylay the king\u2019s couriers, or a hacker worms his way into a corporate computer system.",
+    "text": "VICTORY!: A Character achieves a victory over another Character in this Turning Point. For instance, a band of marauders successfully waylay the king's couriers, or a hacker worms his way into a corporate computer system.",
     "ranges": {
       "Action": 57,
       "Tension": 62,
@@ -966,7 +978,7 @@
   },
   {
     "index": 88,
-    "text": "SOLE SURVIVOR: This Turning Point involves some kind of process of elimination where there is only one left. This can be a battle, but doesn\u2019t have to be. For instance, maybe a sinking ship has a single survivor who washes up on shore, or a group of crewmen from a starship playing chess with an alien intelligence is down to their last crewmember who is now chosen for the alien\u2019s ultimate challenge.",
+    "text": "SOLE SURVIVOR: This Turning Point involves some kind of process of elimination where there is only one left. This can be a battle, but doesn't have to be. For instance, maybe a sinking ship has a single survivor who washes up on shore, or a group of crewmen from a starship playing chess with an alien intelligence is down to their last crewmember who is now chosen for the alien's ultimate challenge.",
     "ranges": {
       "Action": 61,
       "Tension": 64,
@@ -988,7 +1000,7 @@
   },
   {
     "index": 90,
-    "text": "CRYPTIC INFORMATION FROM AN UNKNOWN SOURCE: Information that is unclear what it means is received from an anonymous source. Maybe an odd word is found scrawled on a mirror, or a stranger\u2019s diary is found talking about events similar to the Plotline.",
+    "text": "CRYPTIC INFORMATION FROM AN UNKNOWN SOURCE: Information that is unclear what it means is received from an anonymous source. Maybe an odd word is found scrawled on a mirror, or a stranger's diary is found talking about events similar to the Plotline.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1054,7 +1066,7 @@
   },
   {
     "index": 96,
-    "text": "NOT THEIR MASTER: A Character in this Turning Point who is assumed to be working for one source turns out to be working for another. For instance, the hitman who\u2019s been trying to kill a Character doesn\u2019t work for the mafia like you thought, but for a corporation who has an interest in that Character.",
+    "text": "NOT THEIR MASTER: A Character in this Turning Point who is assumed to be working for one source turns out to be working for another. For instance, the hitman who's been trying to kill a Character doesn't work for the mafia like you thought, but for a corporation who has an interest in that Character.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1076,7 +1088,7 @@
   },
   {
     "index": 98,
-    "text": "HELP IS OFFERED, FOR A PRICE: A Character offers to help another Character in exchange for something. What\u2019s being asked for could be anything, from mutual aid to a fee. Whatever the price, it should be steep enough to be of real significance to the paying Character.",
+    "text": "HELP IS OFFERED, FOR A PRICE: A Character offers to help another Character in exchange for something. What's being asked for could be anything, from mutual aid to a fee. Whatever the price, it should be steep enough to be of real significance to the paying Character.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1109,7 +1121,7 @@
   },
   {
     "index": 101,
-    "text": "PRIZED POSSESSION: Whatever is happening in this Turning Point, it involves an important possession of a Character. For instance, if the Turning Point is about something being stolen, maybe a sorcerer\u2019s magic staff is taken.",
+    "text": "PRIZED POSSESSION: Whatever is happening in this Turning Point, it involves an important possession of a Character. For instance, if the Turning Point is about something being stolen, maybe a sorcerer's magic staff is taken.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1131,7 +1143,7 @@
   },
   {
     "index": 103,
-    "text": "DISARMED: A Character loses their primary method of defending themselves. This could mean the loss of a weapon, or maybe a powerful bureaucrat is powerless in another\u2019s kingdom, etc. The disarmament should be temporary for the Turning Point and deprive the Character of crucial defenses.",
+    "text": "DISARMED: A Character loses their primary method of defending themselves. This could mean the loss of a weapon, or maybe a powerful bureaucrat is powerless in another's kingdom, etc. The disarmament should be temporary for the Turning Point and deprive the Character of crucial defenses.",
     "ranges": {
       "Action": 0,
       "Tension": 70,
@@ -1153,7 +1165,7 @@
   },
   {
     "index": 105,
-    "text": "HIDDEN AGENDA: A Character either reveals, or is found out to have, a motive that they had not previously exposed. For instance, maybe the detective isn\u2019t investigating the murder out of dedication to his job, but the victim used to be a love interest of his. Classically, this can also be the ally who turns out to be an enemy. The hidden agenda doesn\u2019t have to be something nefarious, although it can be. Whichever the case, the agenda now becomes known to others.",
+    "text": "HIDDEN AGENDA: A Character either reveals, or is found out to have, a motive that they had not previously exposed. For instance, maybe the detective isn't investigating the murder out of dedication to his job, but the victim used to be a love interest of his. Classically, this can also be the ally who turns out to be an enemy. The hidden agenda doesn't have to be something nefarious, although it can be. Whichever the case, the agenda now becomes known to others.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1241,7 +1253,7 @@
   },
   {
     "index": 113,
-    "text": "AN OBJECT OF UNKNOWN USE IS FOUND: A Character finds something that they think is useful, but they do not know in what way. This may be a magic wand that they don\u2019t know how to use, a key that they don\u2019t know the lock it goes to, a device with an unknown purpose but currently has no power, etc.",
+    "text": "AN OBJECT OF UNKNOWN USE IS FOUND: A Character finds something that they think is useful, but they do not know in what way. This may be a magic wand that they don't know how to use, a key that they don't know the lock it goes to, a device with an unknown purpose but currently has no power, etc.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1295,7 +1307,7 @@
   },
   {
     "index": 117,
-    "text": "HIDDEN THREAT: There is a threat in this Turning Point that has been in the Adventure previous to this Turning Point but went undetected. This could be anything from an evil spirit lurking in an ancient vase to a virus in a person\u2019s body to a good guy who turns out to be a bad guy, etc.",
+    "text": "HIDDEN THREAT: There is a threat in this Turning Point that has been in the Adventure previous to this Turning Point but went undetected. This could be anything from an evil spirit lurking in an ancient vase to a virus in a person's body to a good guy who turns out to be a bad guy, etc.",
     "ranges": {
       "Action": 0,
       "Tension": 73,
@@ -1350,7 +1362,7 @@
   },
   {
     "index": 122,
-    "text": "WILLING TO TALK: A Character is in a mood to talk. Whatever it is they have to say, it\u2019s important to furthering the Plotline.",
+    "text": "WILLING TO TALK: A Character is in a mood to talk. Whatever it is they have to say, it's important to furthering the Plotline.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1372,7 +1384,7 @@
   },
   {
     "index": 124,
-    "text": "CHARACTER HARM: A Character hurts another Character in some personal way. For instance, a villain harms a wizard\u2019s familiar or a Character hurls a personal insult at another Character.",
+    "text": "CHARACTER HARM: A Character hurts another Character in some personal way. For instance, a villain harms a wizard's familiar or a Character hurls a personal insult at another Character.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1394,8 +1406,14 @@
   },
   {
     "index": 126,
-    "text": "FOLLOWED: A Character is being followed by another Character. - 76-77 - - -",
-    "ranges": {}
+    "text": "FOLLOWED: A Character is being followed by another Character.",
+    "ranges": {
+      "Action": 0,
+      "Tension": 77,
+      "Mystery": 0,
+      "Social": 0,
+      "Personal": 0
+    }
   },
   {
     "index": 127,
@@ -1443,7 +1461,7 @@
   },
   {
     "index": 131,
-    "text": "UNTOUCHABLE: A Character is, in some manner, untouchable by others in this Turning Point. For instance, a villain who is a world leader and thus can\u2019t be directly attacked without triggering an international incident, or a superhero who is nearly impervious to harm. The untouchableness should serve a plot purpose, so that Characters are forced to take other actions to advance the Plotline.",
+    "text": "UNTOUCHABLE: A Character is, in some manner, untouchable by others in this Turning Point. For instance, a villain who is a world leader and thus can't be directly attacked without triggering an international incident, or a superhero who is nearly impervious to harm. The untouchableness should serve a plot purpose, so that Characters are forced to take other actions to advance the Plotline.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1508,7 +1526,7 @@
   },
   {
     "index": 136,
-    "text": "TIME LIMIT: A task must be accomplished within a certain amount of time or a Character will suffer consequences. The time limit does not need to expire within this Turning Point and could extend beyond it further into the Adventure, but it should terminate within this Adventure to give the Characters a reason to accomplish the task. Failure to accomplish the task should be significant. For instance, if a cure to a toxin isn\u2019t found within a day, the prince will die.",
+    "text": "TIME LIMIT: A task must be accomplished within a certain amount of time or a Character will suffer consequences. The time limit does not need to expire within this Turning Point and could extend beyond it further into the Adventure, but it should terminate within this Adventure to give the Characters a reason to accomplish the task. Failure to accomplish the task should be significant. For instance, if a cure to a toxin isn't found within a day, the prince will die.",
     "ranges": {
       "Action": 0,
       "Tension": 81,
@@ -1530,7 +1548,7 @@
   },
   {
     "index": 138,
-    "text": "A NEEDED RESOURCE IS RUNNING SHORT: A resource a Character needs is running low and will need to be replenished. This causes problems for the Character. For instance, a starship\u2019s warp engine functions on crystals that are running out.",
+    "text": "A NEEDED RESOURCE IS RUNNING SHORT: A resource a Character needs is running low and will need to be replenished. This causes problems for the Character. For instance, a starship's warp engine functions on crystals that are running out.",
     "ranges": {
       "Action": 0,
       "Tension": 83,
@@ -1552,7 +1570,7 @@
   },
   {
     "index": 140,
-    "text": "BAD NEWS: Something negative that happens in this Turning Point doesn\u2019t happen directly in the Turning Point but is delivered in the form of information. The event happened remotely, and a Character is learning of it. For instance, Characters may learn their allies lost a crucial battle elsewhere.",
+    "text": "BAD NEWS: Something negative that happens in this Turning Point doesn't happen directly in the Turning Point but is delivered in the form of information. The event happened remotely, and a Character is learning of it. For instance, Characters may learn their allies lost a crucial battle elsewhere.",
     "ranges": {
       "Action": 0,
       "Tension": 85,
@@ -1585,7 +1603,7 @@
   },
   {
     "index": 143,
-    "text": "HUNKER DOWN: This Turning Point involves a Character needing to fortify a place of refuge. For instance, a baron must shore up his castle defenses against an impending attack, or a generator must be fueled up to increase a force field\u2019s power before a meteor storm rains down on the planet surface.",
+    "text": "HUNKER DOWN: This Turning Point involves a Character needing to fortify a place of refuge. For instance, a baron must shore up his castle defenses against an impending attack, or a generator must be fueled up to increase a force field's power before a meteor storm rains down on the planet surface.",
     "ranges": {
       "Action": 0,
       "Tension": 86,
@@ -1629,23 +1647,12 @@
   },
   {
     "index": 144,
-    "text": "POWERFUL PERSON: This Turning Point involves a powerful person. The Character\u2019s power can be of any nature, from a physically powerful warrior to a government figure with a lot of influence. Invoke a Character. If the Character is powerful, then that is the powerful person. If they are not, then the powerful person is someone associated with that Character in some way.",
+    "text": "POWERFUL PERSON: This Turning Point involves a powerful person. The Character's power can be of any nature, from a physically powerful warrior to a government figure with a lot of influence. Invoke a Character. If the Character is powerful, then that is the powerful person. If they are not, then the powerful person is someone associated with that Character in some way.",
     "ranges": {
       "Action": 78,
       "Tension": 89,
       "Mystery": 0,
       "Social": 0,
-      "Personal": 0
-    }
-  },
-  {
-    "index": 145,
-    "text": "ESCORT DUTY: A Character must escort another Character somewhere. For instance, this could be a bodyguard transporting a high powered executive to a remote location, or a band of warriors trying to get a princess through a valley full of monsters.",
-    "ranges": {
-      "Action": 0,
-      "Tension": 0,
-      "Mystery": 0,
-      "Social": 77,
       "Personal": 0
     }
   },
@@ -1772,7 +1779,7 @@
   },
   {
     "index": 153,
-    "text": "LIKEABLE: This Turning Point involves a Character who is very likable to another Character. Whoever it is, it should be someone who generates sympathy. The Character\u2019s likability should be strong enough to motivate the other Character\u2019s actions. For instance, a jaded cop thought he has seen it all, but a kidnapped girl kindles in him a desire to save her and redeem himself.",
+    "text": "LIKEABLE: This Turning Point involves a Character who is very likable to another Character. Whoever it is, it should be someone who generates sympathy. The Character's likability should be strong enough to motivate the other Character's actions. For instance, a jaded cop thought he has seen it all, but a kidnapped girl kindles in him a desire to save her and redeem himself.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1816,7 +1823,7 @@
   },
   {
     "index": 157,
-    "text": "VULNERABILITY EXPLOITED: This Turning Point involves a vulnerability of some kind being exploited by a Character. For instance, someone knowing of another\u2019s crime and blackmailing them, Characters learning of a starbase\u2019s secret vulnerability that allows it to be destroyed, etc. This Turning Point can either involve learning about the vulnerability or actively exploiting it.",
+    "text": "VULNERABILITY EXPLOITED: This Turning Point involves a vulnerability of some kind being exploited by a Character. For instance, someone knowing of another's crime and blackmailing them, Characters learning of a starbase's secret vulnerability that allows it to be destroyed, etc. This Turning Point can either involve learning about the vulnerability or actively exploiting it.",
     "ranges": {
       "Action": 0,
       "Tension": 95,
@@ -1849,7 +1856,7 @@
   },
   {
     "index": 160,
-    "text": "IT’S BUSINESS: This Turning Point involves business or commerce in some way. It can either be a business transaction, or a business is involved in the Turning Point. For instance, a corporation hires a super hero to protect an important shipment, or a book of antiquity containing a needed spell has to be purchased from an auction house.",
+    "text": "IT'S BUSINESS: This Turning Point involves business or commerce in some way. It can either be a business transaction, or a business is involved in the Turning Point. For instance, a corporation hires a super hero to protect an important shipment, or a book of antiquity containing a needed spell has to be purchased from an auction house.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1870,7 +1877,7 @@
   },
   {
     "index": 161,
-    "text": "EXPERT KNOWLEDGE: This Turning Point involves a Character who has very specific and specialized knowledge or skills that come into play during the Turning Point. For instance, only the genius of Dr. Rayder can figure out the intricacies of the alien device, or it\u2019s discovered that a killer is murdering people with his knowledge of exotic poisons.",
+    "text": "EXPERT KNOWLEDGE: This Turning Point involves a Character who has very specific and specialized knowledge or skills that come into play during the Turning Point. For instance, only the genius of Dr. Rayder can figure out the intricacies of the alien device, or it's discovered that a killer is murdering people with his knowledge of exotic poisons.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1892,7 +1899,7 @@
   },
   {
     "index": 163,
-    "text": "A FOCUS ON THE MUNDANE: This Turning Point involves a focus on something mundane and ordinary, such as a person\u2019s living room or a meal. This mundane thing may be coupled with something extraordinary in the Turning Point. For instance, a Character is killed when his nightly dinner is poisoned, or a family portrait is found to be a cursed item.",
+    "text": "A FOCUS ON THE MUNDANE: This Turning Point involves a focus on something mundane and ordinary, such as a person's living room or a meal. This mundane thing may be coupled with something extraordinary in the Turning Point. For instance, a Character is killed when his nightly dinner is poisoned, or a family portrait is found to be a cursed item.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
@@ -1925,7 +1932,7 @@
   },
   {
     "index": 166,
-    "text": "CONFRONTATION: This Turning Point involves Characters meeting in a confrontation that may turn physical if things don\u2019t go well. For instance, a Character meets the leader of a street gang to get information, but the gang is notoriously twitchy and violent.",
+    "text": "CONFRONTATION: This Turning Point involves Characters meeting in a confrontation that may turn physical if things don't go well. For instance, a Character meets the leader of a street gang to get information, but the gang is notoriously twitchy and violent.",
     "ranges": {
       "Action": 89,
       "Tension": 0,
@@ -1991,7 +1998,7 @@
   },
   {
     "index": 172,
-    "text": "CONSPIRACY THEORY: A Character believes in a scenario that explains a problem in this Adventure. The Character may be right or wrong, but the theory may cause action on the part of the Character. For instance, a group is holed up in a mall during a zombie apocalypse. One Character believes it\u2019s just a disease, so they encourage the others not to shoot the zombies.",
+    "text": "CONSPIRACY THEORY: A Character believes in a scenario that explains a problem in this Adventure. The Character may be right or wrong, but the theory may cause action on the part of the Character. For instance, a group is holed up in a mall during a zombie apocalypse. One Character believes it's just a disease, so they encourage the others not to shoot the zombies.",
     "ranges": {
       "Action": 0,
       "Tension": 0,
