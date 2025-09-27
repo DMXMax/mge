@@ -2,6 +2,8 @@ package util
 
 import (
 	"math/rand"
+
+	"github.com/DMXMax/mge/util/elements"
 )
 
 type EventFocus int
@@ -91,17 +93,38 @@ func GetEventAction() (string, string) {
 
 }
 
+func GetMeaningActions() []string {
+	return []string{
+		elements.ActionTable1[rand.Intn(len(elements.ActionTable1))],
+		elements.ActionTable2[rand.Intn(len(elements.ActionTable2))],
+	}
+}
+
+func GetMeaningDescriptors() []string {
+	return []string{
+		elements.Descriptor1[rand.Intn(len(elements.Descriptor1))],
+		elements.Descriptor2[rand.Intn(len(elements.Descriptor2))],
+	}
+}
+
 type Event struct {
 	Focus           EventFocus
 	Action, Subject string
+	Meaning         struct {
+		Actions     []string
+		Descriptors []string
+	}
 }
 
 func (e Event) String() string {
-	return EventText[e.Focus] + ": " + e.Action + " " + e.Subject
+	return EventText[e.Focus] + ": " + e.Action + " " + e.Subject + " (" + e.Meaning.Descriptors[0] + " " + e.Meaning.Descriptors[1] + ", " + e.Meaning.Actions[0] + " " + e.Meaning.Actions[1] + ")"
 }
 
 func GetEvent() *Event {
 	focus := GetEventFocus()
 	action, subject := GetEventAction()
-	return &Event{focus, action, subject}
+	return &Event{focus, action, subject, struct {
+		Actions     []string
+		Descriptors []string
+	}{Actions: GetMeaningActions(), Descriptors: GetMeaningDescriptors()}}
 }
