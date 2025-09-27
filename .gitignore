@@ -13,6 +13,7 @@
 !/.gitignore
 
 !*.go
+!/util/*.py
 !go.sum
 !go.mod
 
