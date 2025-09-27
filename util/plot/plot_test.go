@@ -79,3 +79,42 @@ func TestGetChartEntry(t *testing.T) {
 		}
 	})
 }
+
+func TestChartRangesAreIncreasing(t *testing.T) {
+	chart, err := LoadChart()
+	if err != nil {
+		t.Fatalf("LoadChart returned error: %v", err)
+	}
+
+	themes := []struct {
+		themeType theme.ThemeType
+		name      string
+		getValue  func(p *PlotPoint) int
+	}{
+		{theme.ThemeAction, "Action", func(p *PlotPoint) int { return p.Action }},
+		{theme.ThemeTension, "Tension", func(p *PlotPoint) int { return p.Tension }},
+		{theme.ThemeMystery, "Mystery", func(p *PlotPoint) int { return p.Mystery }},
+		{theme.ThemeSocial, "Social", func(p *PlotPoint) int { return p.Social }},
+		{theme.ThemePersonal, "Personal", func(p *PlotPoint) int { return p.Personal }},
+	}
+
+	lastValues := make(map[theme.ThemeType]int)
+	for _, th := range themes {
+		lastValues[th.themeType] = 0
+	}
+
+	for i, point := range chart.PlotPoints {
+		for _, th := range themes {
+			currentValue := th.getValue(&point)
+
+			if currentValue == 0 {
+				continue // Zeros are allowed, we just don't update lastValue.
+			}
+
+			if lastValue := lastValues[th.themeType]; currentValue <= lastValue {
+				t.Errorf("point %d (%q): theme %s value %d is not greater than previous non-zero value %d", i+1, point.Description, th.name, currentValue, lastValue)
+			}
+			lastValues[th.themeType] = currentValue
+		}
+	}
+}

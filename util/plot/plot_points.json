@@ -1649,10 +1649,10 @@
     "index": 144,
     "text": "POWERFUL PERSON: This Turning Point involves a powerful person. The Character's power can be of any nature, from a physically powerful warrior to a government figure with a lot of influence. Invoke a Character. If the Character is powerful, then that is the powerful person. If they are not, then the powerful person is someone associated with that Character in some way.",
     "ranges": {
-      "Action": 78,
-      "Tension": 89,
+      "Action": 0,
+      "Tension": 0,
       "Mystery": 0,
-      "Social": 0,
+      "Social": 77,
       "Personal": 0
     }
   },
@@ -1661,9 +1661,9 @@
     "text": "CREEPY TONE: This Turning Point involves a creepy tone, such as a dark and forbidding place or a Character who is extremely menacing in a disturbing way.",
     "ranges": {
       "Action": 0,
-      "Tension": 0,
+      "Tension": 91,
       "Mystery": 0,
-      "Social": 77,
+      "Social": 0,
       "Personal": 0
     }
   },
