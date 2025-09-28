@@ -1,6 +1,10 @@
 package theme
 
-import "testing"
+import (
+	"fmt"
+	"strings"
+	"testing"
+)
 
 func TestGetThemes(t *testing.T) {
 	themes := GetThemes()
@@ -34,14 +38,33 @@ var themeOrder = []ThemeType{
 }
 
 func TestThemesGetTheme(t *testing.T) {
-	themes := Themes{ThemeAction, ThemeTension, ThemeMystery, ThemeSocial, ThemePersonal}
+	themes := GetThemes()
 	counts := make(map[ThemeType]int)
 	const trials = 100000
 
 	for i := 0; i < trials; i++ {
-		counts[themes.GetTheme()]++
+		counts[themes.GetRandomTheme()]++
 	}
-	t.Logf("%v, %v, %v, %v, %v", counts[themes[0]], counts[themes[1]], counts[themes[2]], counts[themes[3]], counts[themes[4]])
+
+	// Use a strings.Builder for efficient string construction.
+	var sb strings.Builder
+	// Start with a newline for better layout in the test log.
+	sb.WriteString("\n")
+	// Loop through the themes to build the output string.
+	for i, theme := range themes {
+		// Format each theme and its corresponding count, padding for alignment.
+		sb.WriteString(fmt.Sprintf("%-10s %-7d", theme, counts[theme]))
+		// Add a newline after every second item to create two columns,
+		// or if it's the last item. Otherwise, add tabs for spacing.
+		if i%2 != 0 || i == len(themes)-1 {
+			sb.WriteString("\n")
+		} else {
+			sb.WriteString("\t\t")
+		}
+	}
+	// Log the final, formatted string. This is more readable and maintainable
+	// than a single complex format string.
+	t.Log(sb.String())
 
 	for _, theme := range themeOrder {
 		if counts[theme] == 0 {
@@ -49,20 +72,20 @@ func TestThemesGetTheme(t *testing.T) {
 		}
 	}
 
-	if counts[ThemeAction] <= counts[ThemeMystery] {
-		t.Fatalf("expected first theme count > third: got %d vs %d", counts[ThemeAction], counts[ThemeMystery])
+	if counts[themes[0]] <= counts[themes[2]] {
+		t.Fatalf("expected first theme count > third: got %d vs %d", counts[themes[0]], counts[themes[2]])
 	}
-	if counts[ThemeAction] <= counts[ThemeTension] {
-		t.Fatalf("expected first theme count > second: got %d vs %d", counts[ThemeAction], counts[ThemeTension])
+	if counts[themes[0]] <= counts[themes[1]] {
+		t.Fatalf("expected first theme count > second: got %d vs %d", counts[themes[0]], counts[themes[1]])
 	}
-	if counts[ThemeTension] <= counts[ThemeMystery] {
-		t.Fatalf("expected second theme count > third: got %d vs %d", counts[ThemeTension], counts[ThemeMystery])
+	if counts[themes[1]] <= counts[themes[2]] {
+		t.Fatalf("expected second theme count > third: got %d vs %d", counts[themes[1]], counts[themes[2]])
 	}
-	lastCombined := counts[ThemeSocial] + counts[ThemePersonal]
+	lastCombined := counts[themes[3]] + counts[themes[4]]
 	if lastCombined == 0 {
 		t.Fatalf("expected fourth or fifth theme to appear")
 	}
-	if diff := counts[ThemeSocial] - counts[ThemePersonal]; diff < -trials/10 || diff > trials/10 {
+	if diff := counts[themes[3]] - counts[themes[4]]; diff < -trials/10 || diff > trials/10 {
 		t.Fatalf("expected last two themes to be roughly even, diff=%d", diff)
 	}
 }

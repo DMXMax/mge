@@ -117,3 +117,13 @@ func rangeForTheme(point *PlotPoint, themeType theme.ThemeType) (int, error) {
 		return 0, fmt.Errorf("unknown theme %q", themeType)
 	}
 }
+
+var Chart *PlotPointChart
+
+func init() {
+	var err error
+	Chart, err = LoadChart()
+	if err != nil {
+		panic(err)
+	}
+}

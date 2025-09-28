@@ -1,7 +1,10 @@
 package theme
 
 import (
+	"database/sql/driver"
+	"fmt"
 	"math/rand/v2"
+	"strings"
 	"time"
 )
 
@@ -32,7 +35,7 @@ func GetThemes() Themes {
 	return themes
 }
 
-func (ts Themes) GetTheme() ThemeType {
+func (ts Themes) GetRandomTheme() ThemeType {
 	r := rand.New(rand.NewPCG(uint64(time.Now().UnixNano()), 0))
 	roll := r.IntN(10) + 1
 
@@ -49,4 +52,35 @@ func (ts Themes) GetTheme() ThemeType {
 		}
 		return ts[4]
 	}
+}
+
+// Value implements the driver.Valuer interface for Gorm.
+// This converts the Themes array into a single comma-separated string for database storage.
+func (t Themes) Value() (driver.Value, error) {
+	if len(t) == 0 {
+		return "", nil
+	}
+	// Convert [5]ThemeType to []string for easier joining.
+	strs := make([]string, len(t))
+	for i, theme := range t {
+		strs[i] = string(theme)
+	}
+	return strings.Join(strs, ","), nil
+}
+
+// Scan implements the sql.Scanner interface for Gorm.
+// This converts a comma-separated string from the database back into a Themes array.
+func (t *Themes) Scan(value interface{}) error {
+	s, ok := value.(string)
+	if !ok {
+		return fmt.Errorf("unsupported type for Themes scan: %T", value)
+	}
+	parts := strings.Split(s, ",")
+	if len(parts) != len(t) {
+		return fmt.Errorf("invalid theme string: expected %d parts, got %d from %q", len(t), len(parts), s)
+	}
+	for i, part := range parts {
+		t[i] = ThemeType(part)
+	}
+	return nil
 }
