@@ -1,5 +1,5 @@
 // Package storage provides shared game data structures and operations
-// for Mythic applications, including Game, LogEntry, Thread, and Character models.
+// for Mythic applications, including Game, LogEntry, Thread, Character, and Scene models.
 package storage
 
 import (
@@ -67,6 +67,27 @@ type Character struct {
 // BeforeCreate is a GORM hook that generates a UUID for the character before creation.
 func (c *Character) BeforeCreate(tx *gorm.DB) (err error) {
 	c.ID = uuid.New()
+	return
+}
+
+// Scene represents an active scene in a game.
+// Scenes track the current narrative moment with its type (expected, altered, interrupt)
+// and the expected concept for that scene.
+type Scene struct {
+	ID             uuid.UUID      `gorm:"type:uuid;primary_key;"`
+	CreatedAt      time.Time      // When the scene was created
+	UpdatedAt      time.Time      // When the scene was last updated
+	DeletedAt      gorm.DeletedAt `gorm:"index"`     // Soft delete support
+	GameID         uuid.UUID      `gorm:"type:uuid"` // Foreign key to the game
+	Type           string         // Scene type: "expected", "altered", "interrupt"
+	ExpectedConcept string        // The expected scene concept
+	ChaosDieRoll   int           // The chaos die roll result
+	IsActive       bool          `gorm:"default:true"` // Whether this scene is currently active
+}
+
+// BeforeCreate is a GORM hook that generates a UUID for the scene before creation.
+func (s *Scene) BeforeCreate(tx *gorm.DB) (err error) {
+	s.ID = uuid.New()
 	return
 }
 
