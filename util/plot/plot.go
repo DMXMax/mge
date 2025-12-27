@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"sync"
 
 	"github.com/DMXMax/mge/util/theme"
 )
@@ -118,12 +119,26 @@ func rangeForTheme(point *PlotPoint, themeType theme.ThemeType) (int, error) {
 	}
 }
 
+var (
+	chart     *PlotPointChart
+	chartOnce sync.Once
+	chartErr  error
+)
+
+// GetChart returns the global plot point chart, loading it on first access.
+// Subsequent calls return the cached chart or the error from the first load attempt.
+func GetChart() (*PlotPointChart, error) {
+	chartOnce.Do(func() {
+		chart, chartErr = LoadChart()
+	})
+	return chart, chartErr
+}
+
+// Chart is deprecated. Use GetChart() instead for proper error handling.
+// This variable is provided for backwards compatibility and will be nil if loading fails.
 var Chart *PlotPointChart
 
 func init() {
-	var err error
-	Chart, err = LoadChart()
-	if err != nil {
-		panic(err)
-	}
+	// Try to load the chart, but don't panic if it fails
+	Chart, _ = LoadChart()
 }

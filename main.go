@@ -5,9 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time"
-
-	"math/rand"
 
 	"github.com/DMXMax/mge/chart"
 )
@@ -25,8 +22,6 @@ func main() {
 	oddsFlag := flag.String("o", "fifty", "odds name or prefix (e.g., 'unlikely', 'very', 'nearly certain')")
 	chaos := flag.Int("c", 6, "chaos factor (0-8)")
 	flag.Parse()
-
-	rand.Seed(time.Now().UnixNano())
 
 	o, err := parseOdds(*oddsFlag)
 	if err != nil {
@@ -72,18 +67,3 @@ func parseOdds(s string) (chart.Odds, error) {
 	return matches[0], nil
 }
 
-/*
-	func properTitle(input string) string {
-		words := strings.Split(input, " ")
-		smallwords := " a an on the to "
-
-		for index, word := range words {
-			if strings.Contains(smallwords, " "+word+" ") && word != string(word[0]) {
-				words[index] = word
-			} else {
-				words[index] = cases.Title(word)
-			}
-		}
-		return strings.Join(words, " ")
-	}
-*/

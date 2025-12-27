@@ -7,6 +7,32 @@ import (
 	"github.com/DMXMax/mge/util/theme"
 )
 
+func TestGetChart(t *testing.T) {
+	// Test the lazy-loading GetChart function
+	chart, err := GetChart()
+	if err != nil {
+		t.Fatalf("GetChart returned error: %v", err)
+	}
+
+	if chart == nil {
+		t.Fatalf("GetChart returned nil chart")
+	}
+
+	t.Logf("Actual Len: %d", len(chart.PlotPoints))
+	if len(chart.PlotPoints) <= 1 {
+		t.Fatalf("expected more than 1 plot point, got %d", len(chart.PlotPoints))
+	}
+
+	// Test that calling GetChart again returns the same instance
+	chart2, err2 := GetChart()
+	if err2 != nil {
+		t.Fatalf("second GetChart call returned error: %v", err2)
+	}
+	if chart != chart2 {
+		t.Error("GetChart should return the same cached instance")
+	}
+}
+
 func TestLoadChart(t *testing.T) {
 	chart, err := LoadChart()
 	if err != nil {

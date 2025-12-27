@@ -4,7 +4,7 @@ package dice
 
 import (
 	"fmt"
-	"math/rand"
+	"math/rand/v2"
 )
 
 // RollModifier represents a modifier applied to a dice roll.
@@ -27,7 +27,7 @@ type Roll struct {
 func RollFate() *Roll {
 	r := Roll{}
 	for i := range r.dice {
-		r.dice[i] = rand.Intn(3) - 1
+		r.dice[i] = rand.IntN(3) - 1
 	}
 	return &r
 }

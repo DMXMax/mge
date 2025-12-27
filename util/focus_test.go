@@ -92,7 +92,10 @@ func TestEvent_String(t *testing.T) {
 		Meaning: struct {
 			Actions     []string
 			Descriptors []string
-		}{Actions: GetMeaningActions(), Descriptors: GetMeaningDescriptors()},
+		}{
+			Actions:     []string{"Take", "Advantage"},
+			Descriptors: []string{"Boldly", "Mighty"},
+		},
 	}
 	expected := "NPC Action: Guide Power (Boldly Mighty, Take Advantage)"
 	if got := event.String(); got != expected {
