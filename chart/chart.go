@@ -2,7 +2,7 @@ package chart
 
 import (
 	"fmt"
-	"math/rand"
+	"math/rand/v2"
 	"strings"
 
 	"github.com/DMXMax/mge/util"
@@ -126,7 +126,7 @@ func (f *fateChart) RollOdds(o Odds, chaos int) *Result {
 	chaos = max(min(chaos, MaxChaos), MinChaos)
 
 	odds := FateChart[o][MaxChaos-chaos]
-	roll := rand.Intn(100) + 1
+	roll := rand.IntN(100) + 1
 
 	r := evaluate(odds, roll)
 	r.RollOdds = o

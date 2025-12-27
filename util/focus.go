@@ -1,7 +1,7 @@
 package util
 
 import (
-	"math/rand"
+	"math/rand/v2"
 
 	"github.com/DMXMax/mge/util/elements"
 )
@@ -58,7 +58,7 @@ Event Focus Table
 func GetEventFocus() EventFocus {
 	//random number from 1 to 100
 
-	switch roll := rand.Intn(100) + 1; {
+	switch roll := rand.IntN(100) + 1; {
 	case roll <= 5:
 		return Remote
 	case roll <= 10:
@@ -89,21 +89,21 @@ func GetEventFocus() EventFocus {
 
 func GetEventAction() (string, string) {
 
-	return Action[rand.Intn(len(Action))], Subject[rand.Intn(len(Subject))]
+	return Action[rand.IntN(len(Action))], Subject[rand.IntN(len(Subject))]
 
 }
 
 func GetMeaningActions() []string {
 	return []string{
-		elements.ActionTable1[rand.Intn(len(elements.ActionTable1))],
-		elements.ActionTable2[rand.Intn(len(elements.ActionTable2))],
+		elements.ActionTable1[rand.IntN(len(elements.ActionTable1))],
+		elements.ActionTable2[rand.IntN(len(elements.ActionTable2))],
 	}
 }
 
 func GetMeaningDescriptors() []string {
 	return []string{
-		elements.Descriptor1[rand.Intn(len(elements.Descriptor1))],
-		elements.Descriptor2[rand.Intn(len(elements.Descriptor2))],
+		elements.Descriptor1[rand.IntN(len(elements.Descriptor1))],
+		elements.Descriptor2[rand.IntN(len(elements.Descriptor2))],
 	}
 }
 

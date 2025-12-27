@@ -3,7 +3,7 @@ package scene
 
 import (
 	"fmt"
-	"math/rand"
+	"math/rand/v2"
 )
 
 // RollResult represents the result of rolling the Chaos Die for scene determination.
@@ -15,18 +15,18 @@ type RollResult struct {
 
 // RollChaosDie rolls a d10 and determines the scene type based on the chaos factor.
 // According to Mythic GME rules:
-// - Roll > Chaos Factor: Expected Scene
-// - Roll <= Chaos Factor AND roll is odd (1, 3, 5, 7, 9): Altered Scene
-// - Roll <= Chaos Factor AND roll is even (2, 4, 6, 8): Interrupt Scene
+// - Roll > (Chaos Factor + 1): Expected Scene
+// - Roll <= (Chaos Factor + 1) AND roll is odd (1, 3, 5, 7, 9): Altered Scene
+// - Roll <= (Chaos Factor + 1) AND roll is even (2, 4, 6, 8): Interrupt Scene
 func RollChaosDie(chaos int) *RollResult {
 	// Roll 1d10
-	roll := rand.Intn(10) + 1
+	roll := rand.IntN(10) + 1
 
 	// Determine scene type
 	var sceneType string
 	var description string
 
-	if roll > chaos {
+	if roll > (chaos + 1) {
 		sceneType = "expected"
 		description = fmt.Sprintf("Expected Scene (roll: %d, chaos: %d)", roll, chaos)
 	} else if roll%2 == 1 { // Odd: 1, 3, 5, 7, 9
@@ -47,7 +47,7 @@ func RollChaosDie(chaos int) *RollResult {
 // rollAdjustment rolls a single adjustment from the Scene Adjustment Table (1-6 only).
 // This is a helper function used when rolling 7-10 (which requires 2 adjustments).
 func rollAdjustment() string {
-	roll := rand.Intn(6) + 1
+	roll := rand.IntN(6) + 1
 	switch roll {
 	case 1:
 		return "Remove A Character"
@@ -77,7 +77,7 @@ func rollAdjustment() string {
 // - 7-10: Make 2 Adjustments (roll twice, ignoring results of 7-10)
 // Returns a slice of strings, with one or two adjustment suggestions.
 func GetSceneAdjustment() []string {
-	roll := rand.Intn(10) + 1
+	roll := rand.IntN(10) + 1
 	switch roll {
 	case 1:
 		return []string{"Remove A Character"}
@@ -100,4 +100,3 @@ func GetSceneAdjustment() []string {
 		return []string{"Unknown Adjustment"}
 	}
 }
-

@@ -44,7 +44,6 @@ var Action = []string{
 	"Expose",
 	"Haggle",
 	"Imprison",
-	"Release",
 	"Celebrate",
 	"Develop",
 	"Travel",
