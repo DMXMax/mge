@@ -17,7 +17,7 @@ A small Go module that implements a Fate Chart roller and event generator inspir
 
 ## Quick Start
 
-Run the example app (defaults to 50/50 odds, chaos 6):
+Run the example app (defaults to 50/50 odds, chaos 5):
 
 ```bash
 go run .
@@ -36,7 +36,7 @@ Note: Output is random each run.
 - `-o` (odds): odds name or prefix (text only)
   - Names: `impossible`, `nearly impossible`, `very unlikely`, `unlikely`, `fifty fifty`, `likely`, `very likely`, `nearly certain`, `certain`
   - Prefixes: e.g., `-o unlikely`, `-o very`, `-o nearly` (ambiguous prefixes error)
-- `-c` (chaos): integer chaos factor (0–8)
+- `-c` (chaos): integer chaos factor (1–9)
 
 Examples:
 
@@ -70,10 +70,11 @@ go run . -o very           # ambiguous: refine to 'very likely' or 'very unlikel
 
 ## Using the API
 
-Example: roll at 50/50 odds with chaos 6
+Example: roll at 50/50 odds with chaos 5
 
 ```go
-res := chart.FateChart.RollOdds(chart.FiftyFifty, 6)
+// Note: Internal API uses 0-8 range. Use chart.ChaosUserToInternal(5) to convert from user-facing value.
+res := chart.FateChart.RollOdds(chart.FiftyFifty, chart.ChaosUserToInternal(5))
 fmt.Println(res.String())
 ```
 

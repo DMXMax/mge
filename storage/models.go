@@ -114,8 +114,15 @@ func (g *Game) BeforeCreate(tx *gorm.DB) (err error) {
 
 // SetChaos sets the chaos factor for the game.
 // The chaos factor affects the likelihood of extreme results in dice rolls.
-// Valid range is 1-9.
+// Valid internal range is 0-8 (user-facing: 1-9).
+// Values outside this range will be clamped to the valid range.
 func (g *Game) SetChaos(v int8) {
+	// Clamp to valid range (0-8)
+	if v < 0 {
+		v = 0
+	} else if v > 8 {
+		v = 8
+	}
 	g.Chaos = v
 }
 

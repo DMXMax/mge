@@ -11,6 +11,20 @@ import (
 const MaxChaos = 8
 const MinChaos = 0
 
+// User-facing chaos range (as documented in Mythic GME books)
+const MaxChaosUser = 9
+const MinChaosUser = 1
+
+// ChaosUserToInternal converts user-facing chaos (1-9) to internal representation (0-8)
+func ChaosUserToInternal(userChaos int) int {
+	return userChaos - 1
+}
+
+// ChaosInternalToUser converts internal chaos (0-8) to user-facing representation (1-9)
+func ChaosInternalToUser(internalChaos int) int {
+	return internalChaos + 1
+}
+
 // enum
 type Odds int8
 

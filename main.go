@@ -18,9 +18,9 @@ import (
 //hint: use the util.Subject map
 
 func main() {
-	// Flags: -o for odds (name/prefix or index 0-8), -c for chaos
+	// Flags: -o for odds (name/prefix or index 0-8), -c for chaos (user-facing: 1-9)
 	oddsFlag := flag.String("o", "fifty", "odds name or prefix (e.g., 'unlikely', 'very', 'nearly certain')")
-	chaos := flag.Int("c", 6, "chaos factor (0-8)")
+	userChaos := flag.Int("c", 5, "chaos factor (1-9)")
 	flag.Parse()
 
 	o, err := parseOdds(*oddsFlag)
@@ -29,12 +29,14 @@ func main() {
 		os.Exit(2)
 	}
 
-	if *chaos < 0 || *chaos > 8 {
-		fmt.Fprintf(os.Stderr, "invalid -c value: %d (must be 0..8)\n", *chaos)
+	if *userChaos < chart.MinChaosUser || *userChaos > chart.MaxChaosUser {
+		fmt.Fprintf(os.Stderr, "invalid -c value: %d (must be %d..%d)\n", *userChaos, chart.MinChaosUser, chart.MaxChaosUser)
 		os.Exit(2)
 	}
 
-	result := chart.FateChart.RollOdds(o, *chaos)
+	// Convert user input (1-9) to internal representation (0-8)
+	chaos := chart.ChaosUserToInternal(*userChaos)
+	result := chart.FateChart.RollOdds(o, chaos)
 	fmt.Printf("%s\n", result)
 }
 
