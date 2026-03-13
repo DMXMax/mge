@@ -70,26 +70,30 @@ func TestGetChartEntry(t *testing.T) {
 	if err != nil {
 		t.Fatalf("LoadChart returned error: %v", err)
 	}
-	t.Run("returns last entry with range less than roll", func(t *testing.T) {
-		entry, err := chart.GetChartEntry(90, theme.ThemeAction)
+	// Second entry in chart is "NONE: Leave this Plot Point blank" with all theme ranges 24.
+	secondEntryPrefix := "NONE: Leave this Plot Point blank"
+	t.Run("returns first entry with range >= roll", func(t *testing.T) {
+		// Roll 20 with Action: first entry has Action 8, second has Action 24 >= 20.
+		entry, err := chart.GetChartEntry(20, theme.ThemeAction)
 		if err != nil {
 			t.Fatalf("GetChartEntry returned error: %v", err)
 		}
 		if entry == nil {
 			t.Fatalf("GetChartEntry returned nil entry")
 		}
-		if entry.Description != "second" {
-			t.Fatalf("expected \"second\" entry, got #%v", entry)
+		if !strings.HasPrefix(entry.Description, secondEntryPrefix) {
+			t.Fatalf("expected entry with description prefix %q, got %q", secondEntryPrefix, entry.Description)
 		}
 	})
 
 	t.Run("skips zero ranges", func(t *testing.T) {
+		// Roll 17 with Tension: first entry has Tension 8, second has Tension 24 >= 17 (first has 8, skip zeros later).
 		entry, err := chart.GetChartEntry(17, theme.ThemeTension)
 		if err != nil {
 			t.Fatalf("GetChartEntry returned error: %v", err)
 		}
-		if entry.Description != "second" {
-			t.Fatalf("expected \"second\" entry, got %v", entry.Tension)
+		if !strings.HasPrefix(entry.Description, secondEntryPrefix) {
+			t.Fatalf("expected entry with description prefix %q, got %q", secondEntryPrefix, entry.Description)
 		}
 	})
 

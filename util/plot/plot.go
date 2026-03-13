@@ -1,15 +1,16 @@
 package plot
 
 import (
+	_ "embed"
 	"encoding/json"
 	"fmt"
-	"os"
-	"path/filepath"
-	"runtime"
 	"sync"
 
 	"github.com/DMXMax/mge/util/theme"
 )
+
+//go:embed plot_points.json
+var plotPointsJSON []byte
 
 type PlotPoint struct {
 	Action      int    `json:"Action"`
@@ -26,18 +27,7 @@ type PlotPointChart struct {
 
 // LoadChart reads the plot points JSON dataset and returns it as a Go struct.
 func LoadChart() (*PlotPointChart, error) {
-	_, currentFile, _, ok := runtime.Caller(0)
-	if !ok {
-		return nil, fmt.Errorf("unable to resolve caller information")
-	}
-
-	chartPath := filepath.Join(filepath.Dir(currentFile), "plot_points.json")
-
-	data, err := os.ReadFile(chartPath)
-	if err != nil {
-		return nil, fmt.Errorf("read plot points: %w", err)
-	}
-
+	data := plotPointsJSON
 	var rawEntries []struct {
 		Text   string         `json:"text"`
 		Ranges map[string]int `json:"ranges"`
