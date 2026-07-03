@@ -148,10 +148,19 @@ func (f *fateChart) RollOdds(o Odds, chaos int) *Result {
 	r.Chaos = chaos
 	r.Roll = roll
 
-	if roll%11 == 0 && roll/11 <= chaos {
+	if triggersEventOnDouble(roll, chaos) {
 		r.Event = util.GetEvent()
 	}
 	return r
+}
+
+// triggersEventOnDouble reports whether a fate chart roll should trigger a random
+// event per Mythic GME rules: numeric doubles (11, 22, …, 99) when the tens
+// digit is less than or equal to the user-facing chaos factor (1–9).
+// internalChaos is the stored representation (0–8).
+func triggersEventOnDouble(roll, internalChaos int) bool {
+	internalChaos = max(min(internalChaos, MaxChaos), MinChaos)
+	return roll%11 == 0 && roll/11 <= ChaosInternalToUser(internalChaos)
 }
 
 func evaluate(odds, roll int) *Result {

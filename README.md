@@ -100,5 +100,5 @@ GOCACHE=$(pwd)/.gocache go vet ./...
 
 ## Notes
 
-- `RollOdds` clamps chaos to the supported range and triggers an event on numeric doubles (`11,22,…,99`) when `roll/11 <= chaos`.
+- `RollOdds` clamps chaos to the supported range and triggers an event on numeric doubles (`11,22,…,99`) when `roll/11 <= ChaosInternalToUser(chaos)` (user-facing chaos 1–9).
 - For reproducible tests, consider seeding `math/rand` with a fixed seed or adding a variant that accepts `*rand.Rand`.

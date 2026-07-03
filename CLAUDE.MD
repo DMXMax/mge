@@ -208,10 +208,10 @@ Examples:
 
 Events trigger on numeric doubles (11, 22, 33, ..., 99) when:
 ```
-roll / 11 <= chaos
+roll / 11 <= ChaosInternalToUser(chaos)
 ```
 
-Where chaos is the internal representation (0-8).
+Where `chaos` is the internal representation (0-8) and `ChaosInternalToUser` maps it to the user-facing chaos factor (1-9).
 
 ### Chaos Factor Clamping
 
